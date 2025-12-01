@@ -13,18 +13,25 @@
   </head>
   <body>
     <h1>Can I take a drive today?</h1>
+    <!-- live region for assistive technology to hear status updates -->
+    <div id="status" aria-live="polite" class="sr-only" role="status"></div>
   <div class="situations">
-    
+  <button class="oil-change" onclick="moveImage()">No Oil Change</button>
+    </div>
+    <div class="car">
+      <div class="car-image-wrapper">
+        <img class="car-image" src="images/car.png" alt="A car" />
+      </div>
+
     </div>
    
     <small> 
       <button id="my-button">Citations</button>
     </small>
     
-    <small>
+    <p>
       <a href="citations.html" class="citations">Citations</a>
-     
-    </small>
+    </p>
   </body>
   <script src="script.js"></script>
 </html>

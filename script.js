@@ -7,3 +7,6 @@ document.querySelector('#my-button').addEventListener('click', function () {
   window.location.href = 'citations.html';
 });
 // AI-generated code ends here
+// Code generated with ChatGPT//
+
+//End of code generated with ChatGPT//

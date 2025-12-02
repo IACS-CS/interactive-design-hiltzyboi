@@ -1,18 +1,16 @@
 h1 {
-  text-align:center;
+  text-align: center;
   font-size: 40px;
-  color:white;
+  color: white;
   text-shadow: 2px 2px 4px #000000;
 }
 
 body {
-  background-image:url('images/autumn-road.png');
-  
+  background-image: url("images/autumn-road.png");
 }
 
-p{
-  font-size:0; 
-
+p {
+  font-size: 0;
 }
 
 /* visually hidden but available for screen readers */
@@ -29,34 +27,103 @@ p{
 }
 
 small {
-  text-align:center;
-  display:block;
+  text-align: center;
+  display: block;
   margin-top: 700px;
-  
 }
 
 a {
-  color:white;
+  color: white;
   text-shadow: 1px 1px 2px #000000;
 }
 
 .citationlist {
-  color:white;
+  color: white;
   text-shadow: 1px 1px 2px #000000;
-  font-size:25px;
-  
+  font-size: 25px;
 }
 
 .car-image {
   position: absolute;
-  left: 50%;
+  left: 110%; /* start just off the right edge */
   top: 48%;
-  transition: left 3s ease;
+  /* animation is applied only when `.drive` class is present */
+  will-change: left;
 }
 
-/*Code sourced from ChatGPT*/
+@keyframes drive {
+  0% {
+    left: 110%; /* off-screen right */
+  }
+  100% {
+    left: 50%; /* middle-screen left */
+  }
+}
 
+/* Helper class: add this to `.car-image` to start the drive animation */
+.car-image.drive {
+  /* run once and keep the final keyframe (50%) */
+  animation: drive 3s linear forwards;
+}
+/* made using codepen*/
+/* Smoke image shown when the car stops */
+.smoke {
+  position: absolute;
+  left: 58%;
+  top: 65%;
+  transform: translateX(-50%);
+  width: 110px;
+  pointer-events: none;
+  opacity: 0;
+  /* small fade-in */
+  animation: smokeIn 0.3s ease forwards;
+  
+}
 
+@keyframes smokeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
 
+/* Result message that pops up when animation finishes */
+.result-message {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+  text-align: center;
+  max-width: 400px;
+  pointer-events: none;
+}
 
+/* hidden state: invisible */
+.result-message.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
+/* visible state with fade-in animation */
+.result-message.visible {
+  opacity: 1;
+  animation: fadeInMessage 0.8s ease forwards;
+}
+
+@keyframes fadeInMessage {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -13,16 +13,18 @@
   </head>
   <body>
     <h1>Can I take a drive today?</h1>
-    <!-- live region for assistive technology to hear status updates -->
-    <div id="status" aria-live="polite" class="sr-only" role="status"></div>
+  
   <div class="situations">
-  <button class="oil-change" onclick="moveImage()">No Oil Change</button>
+  <button class="oil-change" >No Oil Change</button>
     </div>
     <div class="car">
       <div class="car-image-wrapper">
         <img class="car-image" src="images/car.png" alt="A car" />
       </div>
-
+      <!-- Hidden paragraph that shows when button is clicked -->
+      <p class="result-message hidden">Your car broke down! Your car needs oil changes every 5,000-7,000 miles
+        and sooner if you drive harder. This helps keep the engine lubricated and running smoothly.
+      </p>
     </div>
    
     <small> 

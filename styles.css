@@ -77,7 +77,6 @@ a {
   opacity: 0;
   /* small fade-in */
   animation: smokeIn 0.3s ease forwards;
-  
 }
 
 @keyframes smokeIn {
@@ -127,3 +126,4 @@ a {
     transform: translateX(-50%) translateY(0);
   }
 }
+
